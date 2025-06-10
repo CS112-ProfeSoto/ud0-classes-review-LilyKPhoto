@@ -70,11 +70,11 @@ public class CardTester {
 		CardTester.testGetValue();
 
 		CardTester.testGetPrintValue();
-/* 
+
 		CardTester.testEquals();
 
 		// - test getPrintCard() and printCard() //use driver in Main
-	*/}
+	}
 
 
 	/*** TESTER HELPER METHODS ***/
@@ -266,7 +266,7 @@ public class CardTester {
 		System.out.println("Above should have printed exactly like this:");
 		System.out.println("A 2 3 4 5 6 7 8 9 10 J Q K");
 	}
-/*
+
 	public static void testEquals() {
 		Card original = new Card(8, Card.HEART), test = new Card(5, Card.CLUB);
 		System.out.println("\n==============================================");
@@ -291,5 +291,4 @@ public class CardTester {
 		System.out.println("Testing both instance variables match:");
 		System.out.println("Are card " + original + " and card " + test + " the same? " + original.equals(test));
 	}
-*/
 }

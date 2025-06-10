@@ -262,7 +262,6 @@ public class Card {
 	 */
 	public String getPrintCard()
 	{
-		char suit = this.getSuit();
 		String valueString = this.getPrintValue();
 		String outputString = "-------";
 		outputString += String.format("|%c   %c|%n", suit, suit);
@@ -282,7 +281,7 @@ public class Card {
 	 */
 	public String toString()
 	{
-		return this.getPrintValue() + " " + this.getSuit();
+		return this.getPrintValue() + " " + this.suit;
 	}
 
 
@@ -295,6 +294,11 @@ public class Card {
 	 * @return boolean representing equality between both objects, all data is
 	 *         exactly equal to each other
 	 */
+	public boolean equals(Card other)
+	{
+		return this.value == other.value
+			&& this.suit == other.suit;
+	}
 
 
 	/*** EXTRA METHODS ***/

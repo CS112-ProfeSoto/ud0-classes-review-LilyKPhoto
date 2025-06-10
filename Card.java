@@ -12,8 +12,8 @@
  * constant variables will be used throughout code for consistency
  * - Whenever value/suit is changed, it must be within the valid values
  *
- * @author ???
- * @version ???
+ * @author Lily Kaplan <lily.kaplan2102@gmail.com>
+ * @version 0.1
  */
 
 /*
@@ -49,9 +49,16 @@
 public class Card {
 
 	/*** CONSTANT VARIABLES ***/
-
+	public static final char HEART = '♥';
+	public static final char DIAMOND = '♦';
+	public static final char CLUB = '♣';
+	public static final char SPADE = '♠';
+	public static final int DEFAULT_VALUE = 1;
+	public static final char DEFAULT_SUIT = '♥';
 
 	/*** INSTANCE VARIABLES ***/
+	private int value;
+	private char suit;
 
 
 	/*** CONSTRUCTOR METHODS ***/

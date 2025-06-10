@@ -13,7 +13,7 @@
  * - Whenever value/suit is changed, it must be within the valid values
  *
  * @author Lily Kaplan <lily.kaplan2102@gmail.com>
- * @version 0.2
+ * @version 1.0
  */
 
 /*
@@ -86,7 +86,7 @@ public class Card {
 	{
 		if(!this.setValue(value))
 		{
-			System.out.println("ERROR: Value out of range. Exiting...");
+			System.out.printf("ERROR: Value out of range. Attempted to set value to %d. Exiting...%n", value);
 			System.exit(1);
 		}
 		if(!this.setSuit(suit))

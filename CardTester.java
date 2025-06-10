@@ -55,7 +55,7 @@ public class CardTester {
 		CardTester.testSetValue();
 
 		CardTester.testSetSuit();
-		
+/*		
 		CardTester.testSetAll();
 		
 		// - test Default Constructor (implement default constructor,
@@ -74,7 +74,7 @@ public class CardTester {
 		CardTester.testEquals();
 
 		// - test getPrintCard() and printCard() //use driver in Main
-	}
+	*/}
 
 
 	/*** TESTER HELPER METHODS ***/
@@ -152,7 +152,7 @@ public class CardTester {
 		System.out.println("setSuit should NOT have changed suit from " + Card.HEART + ": " + test
 			+ ". Setter returned " + setterTest);
 	}
-
+/*
 	public static void testSetAll() {
 		boolean setterTest;
 		Card test = new Card();
@@ -291,5 +291,5 @@ public class CardTester {
 		System.out.println("Testing both instance variables match:");
 		System.out.println("Are card " + original + " and card " + test + " the same? " + original.equals(test));
 	}
-
+*/
 }

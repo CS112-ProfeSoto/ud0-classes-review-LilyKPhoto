@@ -19,7 +19,7 @@ public class Main {
 	public static void main(String[] args) {
 		/*** RUNNING TESTER ***/
 		//uncomment line below to run CardTester:
-		//CardTester.main(null);
+		CardTester.main(null);
 
 		/*** DRIVER PROGRAM ***/
 		//1. Generate 52 card deck into Card array

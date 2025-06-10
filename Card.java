@@ -13,7 +13,7 @@
  * - Whenever value/suit is changed, it must be within the valid values
  *
  * @author Lily Kaplan <lily.kaplan2102@gmail.com>
- * @version 0.1
+ * @version 0.2
  */
 
 /*
@@ -65,6 +65,12 @@ public class Card {
 	/**
 	 * Default constructor, builds default card object as: A ♥
 	 */
+	public Card()
+	{
+		this.setAll(DEFAULT_VALUE, DEFAULT_SUIT);
+	}
+
+
 
 
 	/**
@@ -97,6 +103,18 @@ public class Card {
 	 *
 	 * @return true if card value is between 1 and 13 (inclusive), false otherwise
 	 */
+	public boolean setValue(int value)
+	{
+		if((value < 1) || (value > 13))
+		{
+			return false;
+		}
+		else
+		{
+			this.value = value;
+			return true;
+		}
+	}
 
 
 	/**
@@ -110,19 +128,43 @@ public class Card {
 	 * @return true if card suit is unicode value for heart, diamond, club or spade.
 	 *         false otherwise
 	 */
+	public boolean setSuit(char suit)
+	{
+		if((suit == HEART) || (suit == DIAMOND) || (suit == SPADE) || (suit == CLUB))
+		{
+			this.suit = suit;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 
 	/**
 	 * Sets suit and value for card only if valid, returns boolean representing
 	 * whether error occured (false) or operation completed successfully (true)
 	 *
-	 * @param suit  one of four suit values (unicode value for heart, diamond,
-	 *              spade, or club)
 	 * @param value numerical value of card (1-13), not what shows on card (A, 2-10,
 	 *              J, Q, K)
+	 * @param suit  one of four suit values (unicode value for heart, diamond,
+	 *              spade, or club)
 	 *
-	 * @return true if card suit AND value are valid, false otherwise
+	 * @return true if card value AND suit are valid, false otherwise
 	 */
+	public boolean setAll(int value, char suit)
+	{
+		if(this.setValue(value) && this.setSuit(suit))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
 
 
 	/*** ACCESSOR METHODS (GETTERS) ***/
@@ -131,6 +173,10 @@ public class Card {
 	 *
 	 * @return suit as unicode character for heart, spade, diamond, or club
 	 */
+	public char getSuit()
+	{
+		return this.suit;
+	}
 
 
 	/**
@@ -139,6 +185,10 @@ public class Card {
 	 * @return value as raw integer 1-13 (not what player sees as A, 2-10, J, Q, K;
 	 *         see {@link #getPrintValue()})
 	 */
+	public int getValue()
+	{
+		return this.value;
+	}
 
 
 	/**
@@ -148,6 +198,35 @@ public class Card {
 	 * @return value as String user sees on card (A, 2-10, J, Q, K), not numerical
 	 *         value 1-13 (see {@link #getValue()})
 	 */
+	public String getPrintValue()
+	{
+		int tempValue = this.getValue();
+		if(tempValue == 1)
+		{
+			return "A";
+		}
+		else if ((tempValue >= 2) && (tempValue <= 10))
+		{
+			return Integer.toString(tempValue);
+		}
+		else if (tempValue == 11)
+		{
+			return "J";
+		}
+		else if (tempValue == 12)
+		{
+			return "Q";
+		}
+		else if (tempValue == 13)
+		{
+			return "K";
+		}
+		else
+		{
+			return "A";
+		}
+
+	}
 
 
 	/**
@@ -165,6 +244,10 @@ public class Card {
 	 * 
 	 * @return String containing (print) value and suit, separated by a space
 	 */
+	public String toString()
+	{
+		return this.getPrintValue() + " " + this.getSuit();
+	}
 
 
 	/**

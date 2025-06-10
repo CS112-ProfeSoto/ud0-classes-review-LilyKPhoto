@@ -82,6 +82,19 @@ public class Card {
 	 * @param suit  one of four suit values (unicode value for heart, diamond,
 	 *              spade, or club)
 	 */
+	public Card(int value, char suit)
+	{
+		if(!this.setValue(value))
+		{
+			System.out.println("ERROR: Value out of range. Exiting...");
+			System.exit(1);
+		}
+		if(!this.setSuit(suit))
+		{
+			System.out.println("ERROR: Invalid suit entered. Exiting...");
+			System.exit(2);
+		}
+	}
 
 
 	/**
@@ -90,6 +103,18 @@ public class Card {
 	 *
 	 * @param original Card object to be copied
 	 */
+	public Card(Card original)
+	{
+		if (original != null)
+		{
+			setAll(original.getValue(), original.getSuit());
+		}
+		else
+        {
+            System.out.println("CRITICAL ERROR: Attempted to copy null Card. Exiting...");
+            System.exit(3);
+        }
+	}
 
 
 	/*** MUTATOR METHODS (SETTERS) ***/
@@ -235,6 +260,17 @@ public class Card {
 	 *
 	 * @return String containing ASCII art with card suit and card print value
 	 */
+	public String getPrintCard()
+	{
+		char suit = this.getSuit();
+		String valueString = this.getPrintValue();
+		String outputString = "-------";
+		outputString += String.format("|%c   %c|%n", suit, suit);
+		outputString += String.format("|  %s  |%n", valueString);
+		outputString += String.format("|%c   %c|%n", suit, suit);
+		outputString += "-------";
+		return outputString;
+	}
 
 
 	/*** OTHER REQUIRED METHODS ***/

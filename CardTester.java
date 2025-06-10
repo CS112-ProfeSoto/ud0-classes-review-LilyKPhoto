@@ -55,9 +55,9 @@ public class CardTester {
 		CardTester.testSetValue();
 
 		CardTester.testSetSuit();
-/*		
+	
 		CardTester.testSetAll();
-		
+			
 		// - test Default Constructor (implement default constructor,
 		//		then see toString() test to see if it passes)
 
@@ -70,7 +70,7 @@ public class CardTester {
 		CardTester.testGetValue();
 
 		CardTester.testGetPrintValue();
-
+/* 
 		CardTester.testEquals();
 
 		// - test getPrintCard() and printCard() //use driver in Main
@@ -152,7 +152,7 @@ public class CardTester {
 		System.out.println("setSuit should NOT have changed suit from " + Card.HEART + ": " + test
 			+ ". Setter returned " + setterTest);
 	}
-/*
+
 	public static void testSetAll() {
 		boolean setterTest;
 		Card test = new Card();
@@ -266,7 +266,7 @@ public class CardTester {
 		System.out.println("Above should have printed exactly like this:");
 		System.out.println("A 2 3 4 5 6 7 8 9 10 J Q K");
 	}
-
+/*
 	public static void testEquals() {
 		Card original = new Card(8, Card.HEART), test = new Card(5, Card.CLUB);
 		System.out.println("\n==============================================");
